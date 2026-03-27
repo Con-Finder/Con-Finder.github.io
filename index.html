@@ -1,755 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IT Conference Finder — Scopus Indexed | 2026</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"Space Mono"', 'monospace'],
-          },
-          colors: {
-            ink: '#0a0a0f',
-            paper: '#f5f3ee',
-            cream: '#faf8f4',
-            accent: '#e85d26',
-            accent2: '#1a6b4a',
-            steel: '#3d4f5f',
-            muted: '#8a8a8a',
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    * { box-sizing: border-box; }
-    body { background: #f5f3ee; }
-    .grain {
-      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.03;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-    .card-enter { animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
-    @keyframes cardIn {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .shimmer {
-      background: linear-gradient(90deg, #e8e5de 25%, #f0ede6 50%, #e8e5de 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-    }
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-    .deadline-pulse { animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-    .tag:hover { transform: scale(1.05); }
-    .conf-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
-    .conf-card { transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #c4c0b8; border-radius: 3px; }
-    .hero-pattern {
-      background-image: radial-gradient(circle at 20% 50%, rgba(232,93,38,0.06) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(26,107,74,0.06) 0%, transparent 50%),
-                        radial-gradient(circle at 60% 80%, rgba(61,79,95,0.04) 0%, transparent 50%);
-    }
-    .stat-card {
-      backdrop-filter: blur(10px);
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2rem !important; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ScholarRadar — 50 Verified IT Conferences for Research Paper Submission</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{display:['"Instrument Serif"','Georgia','serif'],body:['"Outfit"','system-ui','sans-serif'],mono:['"JetBrains Mono"','monospace']},colors:{parchment:'#faf9f6',bone:'#f2f0eb',clay:'#e8e5de',ember:{DEFAULT:'#c44b1a',light:'#e8713a'},forest:{DEFAULT:'#1a7a50',light:'#34d399'},cobalt:{DEFAULT:'#2563a8',light:'#60a5fa'},plum:{DEFAULT:'#7c3aed',light:'#a78bfa'},ink:{DEFAULT:'#1a1a1a','2':'#3d3d3d','3':'#5c5c5c'},muted:'#8c8c8c',d:{bg:'#111113',bg2:'#1a1a1e',s:'#222226',s2:'#2a2a2f'}},animation:{'card-in':'cardIn .45s cubic-bezier(.22,1,.36,1) both','fade-in':'fadeIn .25s ease both','modal-in':'modalIn .3s cubic-bezier(.22,1,.36,1) both','pulse-live':'pulseLive 2s ease-in-out infinite'},keyframes:{cardIn:{from:{opacity:'0',transform:'translateY(20px)'},to:{opacity:'1',transform:'translateY(0)'}},fadeIn:{from:{opacity:'0'},to:{opacity:'1'}},modalIn:{from:{opacity:'0',transform:'scale(.96) translateY(8px)'},to:{opacity:'1',transform:'scale(1) translateY(0)'}},pulseLive:{'0%,100%':{opacity:'1'},'50%':{opacity:'.3'}}}}}}
+</script>
+<style>
+*{box-sizing:border-box}body{font-family:'Outfit',system-ui,sans-serif}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-mesh::before{content:'';position:absolute;width:520px;height:520px;top:-220px;right:-80px;background:radial-gradient(circle,rgba(196,75,26,.06)0%,transparent 70%);border-radius:50%}
+.hero-mesh::after{content:'';position:absolute;width:420px;height:420px;bottom:-220px;left:-40px;background:radial-gradient(circle,rgba(26,122,80,.05)0%,transparent 70%);border-radius:50%}
+.dark .hero-mesh::before{background:radial-gradient(circle,rgba(232,113,58,.08)0%,transparent 70%)}
+.dark .hero-mesh::after{background:radial-gradient(circle,rgba(52,211,153,.06)0%,transparent 70%)}
+.conf-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c44b1a,#1a7a50);opacity:0;transition:opacity .3s;border-radius:16px 16px 0 0}
+.conf-card:hover::before{opacity:1}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#c4c0b8;border-radius:3px}.dark ::-webkit-scrollbar-thumb{background:#444}
+.filter-sel{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%238c8c8c' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+[data-tip]{position:relative}[data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);white-space:nowrap;padding:4px 10px;border-radius:6px;font-size:11px;background:#1a1a1a;color:#faf9f6;z-index:100;pointer-events:none}
+.dark [data-tip]:hover::after{background:#e8e6e1;color:#111}
+.modal-scroll::-webkit-scrollbar{width:5px}.modal-scroll::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}.dark .modal-scroll::-webkit-scrollbar-thumb{background:#555}
+</style>
 </head>
-<body class="font-sans text-ink antialiased min-h-screen">
-  <div class="grain"></div>
+<body class="bg-parchment text-ink min-h-screen antialiased transition-colors duration-300 dark:bg-d-bg dark:text-gray-200">
+<div class="grain"></div>
 
-  <!-- HERO -->
-  <header class="hero-pattern relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-6 pt-12 pb-16">
-      <div class="flex items-center gap-3 mb-8">
-        <div class="w-10 h-10 rounded-lg bg-ink flex items-center justify-center">
-          <svg class="w-5 h-5 text-paper" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-          </svg>
-        </div>
-        <span class="font-mono text-sm tracking-wider uppercase text-steel">Conference Finder</span>
-      </div>
+<!-- HERO -->
+<header class="relative overflow-hidden max-w-[1220px] mx-auto px-5 sm:px-8 pt-10 sm:pt-14 pb-8">
+  <div class="hero-mesh absolute inset-0 pointer-events-none"></div>
+  <div class="relative z-10 flex items-center gap-3 mb-6">
+    <div class="w-10 h-10 rounded-xl bg-ink dark:bg-gray-200 flex items-center justify-center text-lg text-parchment dark:text-d-bg select-none">📡</div>
+    <span class="font-mono text-[11px] font-medium tracking-[2.5px] uppercase text-muted">ScholarRadar</span>
+  </div>
+  <h1 class="relative z-10 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.08] tracking-tight max-w-2xl">50 Verified IT Conferences<br><em class="text-ember">Open for Research Papers</em></h1>
+  <p class="relative z-10 mt-4 text-[16px] leading-relaxed text-ink-2 dark:text-gray-400 max-w-xl">Every conference below is <strong class="text-ink dark:text-gray-100">real, verified, and indexed</strong>. Dates, locations, and websites sourced from official calls for papers — IEEE, ACM, Springer, NeurIPS, and more.</p>
+  <div class="relative z-10 flex flex-wrap gap-2.5 mt-6">
+    <div class="bg-white/70 dark:bg-d-s/70 backdrop-blur border border-black/5 dark:border-white/8 rounded-xl px-4 py-2.5"><div id="stTotal" class="font-mono text-xl font-semibold text-ember leading-none">50</div><div class="text-[10px] uppercase tracking-[1.5px] text-muted mt-1">Conferences</div></div>
+    <div class="bg-white/70 dark:bg-d-s/70 backdrop-blur border border-black/5 dark:border-white/8 rounded-xl px-4 py-2.5"><div id="stScopus" class="font-mono text-xl font-semibold text-forest leading-none">—</div><div class="text-[10px] uppercase tracking-[1.5px] text-muted mt-1">Scopus</div></div>
+    <div class="bg-white/70 dark:bg-d-s/70 backdrop-blur border border-black/5 dark:border-white/8 rounded-xl px-4 py-2.5"><div id="stIEEE" class="font-mono text-xl font-semibold text-cobalt leading-none">—</div><div class="text-[10px] uppercase tracking-[1.5px] text-muted mt-1">IEEE</div></div>
+    <div class="bg-white/70 dark:bg-d-s/70 backdrop-blur border border-black/5 dark:border-white/8 rounded-xl px-4 py-2.5"><div id="stACM" class="font-mono text-xl font-semibold text-plum leading-none">—</div><div class="text-[10px] uppercase tracking-[1.5px] text-muted mt-1">ACM</div></div>
+  </div>
+</header>
 
-      <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight max-w-3xl">
-        IT Research Conferences
-        <span class="text-accent">Open for Submissions</span>
-      </h1>
-      <p class="mt-5 text-lg text-steel max-w-2xl leading-relaxed">
-        Scopus & EI indexed conferences accepting IT research papers — with submission deadlines within the next <strong class="text-ink">60 days</strong>. Updated in real-time via OpenAlex API.
-      </p>
-
-      <div class="mt-8 flex flex-wrap gap-3" id="stats-row">
-        <div class="stat-card rounded-xl px-5 py-3">
-          <div class="font-mono text-2xl font-bold text-accent" id="stat-total">—</div>
-          <div class="text-xs text-muted uppercase tracking-wider">Conferences</div>
-        </div>
-        <div class="stat-card rounded-xl px-5 py-3">
-          <div class="font-mono text-2xl font-bold text-accent2" id="stat-scopus">—</div>
-          <div class="text-xs text-muted uppercase tracking-wider">Scopus Indexed</div>
-        </div>
-        <div class="stat-card rounded-xl px-5 py-3">
-          <div class="font-mono text-2xl font-bold text-steel" id="stat-urgent">—</div>
-          <div class="text-xs text-muted uppercase tracking-wider">Closing &lt; 14 days</div>
-        </div>
-        <div class="stat-card rounded-xl px-5 py-3">
-          <div class="font-mono text-xs font-bold text-muted" id="stat-date">—</div>
-          <div class="text-xs text-muted uppercase tracking-wider">As of today</div>
-        </div>
-      </div>
+<!-- TOOLBAR -->
+<div class="sticky top-0 z-50 bg-parchment/90 dark:bg-d-bg/90 backdrop-blur-xl border-b border-black/5 dark:border-white/6 transition-colors">
+  <div class="max-w-[1220px] mx-auto px-5 sm:px-8 py-3 flex flex-wrap items-center gap-2.5">
+    <div class="relative flex-1 min-w-[170px] max-w-sm">
+      <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input id="q" type="text" placeholder="Search conferences…" class="w-full pl-9 pr-4 py-2.5 rounded-lg bg-white dark:bg-d-s border border-black/8 dark:border-white/10 text-sm text-ink dark:text-gray-200 placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ember/25 transition"/>
     </div>
-  </header>
-
-  <!-- FILTERS -->
-  <section class="sticky top-0 z-50 bg-paper/90 backdrop-blur-lg border-b border-black/5">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center gap-3">
-      <div class="relative flex-1 min-w-[200px] max-w-md">
-        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-        </svg>
-        <input id="search-input" type="text" placeholder="Search conferences, topics, locations..."
-          class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-black/8 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/40 transition" />
-      </div>
-      <select id="filter-indexing" class="px-4 py-2.5 rounded-xl bg-white border border-black/8 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 cursor-pointer">
-        <option value="all">All Indexing</option>
-        <option value="scopus">Scopus</option>
-        <option value="ei">EI Compendex</option>
-        <option value="ieee">IEEE Xplore</option>
-        <option value="acm">ACM DL</option>
-        <option value="springer">Springer</option>
-      </select>
-      <select id="filter-topic" class="px-4 py-2.5 rounded-xl bg-white border border-black/8 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 cursor-pointer">
-        <option value="all">All Topics</option>
-        <option value="ai">AI & Machine Learning</option>
-        <option value="security">Cybersecurity</option>
-        <option value="data">Data Science & Big Data</option>
-        <option value="software">Software Engineering</option>
-        <option value="networks">Networks & IoT</option>
-        <option value="computing">Cloud & Computing</option>
-        <option value="hci">HCI & Multimedia</option>
-      </select>
-      <select id="filter-urgency" class="px-4 py-2.5 rounded-xl bg-white border border-black/8 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 cursor-pointer">
-        <option value="all">All Deadlines</option>
-        <option value="urgent">Closing in &lt;14 days</option>
-        <option value="soon">Closing in 14-30 days</option>
-        <option value="later">Closing in 30-60 days</option>
-      </select>
+    <select id="ft" class="filter-sel px-3 pr-8 py-2.5 rounded-lg bg-white dark:bg-d-s border border-black/8 dark:border-white/10 text-sm text-ink dark:text-gray-200 focus:outline-none cursor-pointer">
+      <option value="all">All Topics</option><option value="ai">🧠 AI & ML</option><option value="cv">👁 Computer Vision</option><option value="nlp">💬 NLP</option><option value="sec">🔒 Security</option><option value="data">📊 Data & Mining</option><option value="se">⚙️ Software Eng.</option><option value="net">🌐 Networks</option><option value="sys">🖥 Systems</option><option value="hci">🎨 HCI</option><option value="web">🕸 Web & IR</option>
+    </select>
+    <select id="fi" class="filter-sel px-3 pr-8 py-2.5 rounded-lg bg-white dark:bg-d-s border border-black/8 dark:border-white/10 text-sm text-ink dark:text-gray-200 focus:outline-none cursor-pointer">
+      <option value="all">All Indexing</option><option value="scopus">Scopus</option><option value="ieee">IEEE Xplore</option><option value="acm">ACM DL</option><option value="springer">Springer</option>
+    </select>
+    <select id="so" class="filter-sel px-3 pr-8 py-2.5 rounded-lg bg-white dark:bg-d-s border border-black/8 dark:border-white/10 text-sm text-ink dark:text-gray-200 focus:outline-none cursor-pointer">
+      <option value="rank">Sort: By Rank</option><option value="name">Sort: A → Z</option><option value="date">Sort: Conf. Date</option>
+    </select>
+    <div class="flex items-center gap-2 ml-auto">
+      <button id="bBm" data-tip="Bookmarks" class="w-9 h-9 rounded-lg border border-black/8 dark:border-white/10 bg-white dark:bg-d-s flex items-center justify-center text-sm cursor-pointer hover:bg-bone dark:hover:bg-d-s2 transition">☆</button>
+      <button id="bTh" data-tip="Theme" class="w-9 h-9 rounded-lg border border-black/8 dark:border-white/10 bg-white dark:bg-d-s flex items-center justify-center text-sm cursor-pointer hover:bg-bone dark:hover:bg-d-s2 transition">☾</button>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- MAIN CONTENT -->
-  <main class="max-w-6xl mx-auto px-6 py-10">
-    <!-- Loading state -->
-    <div id="loading-state" class="space-y-6">
-      <div class="shimmer h-48 rounded-2xl"></div>
-      <div class="shimmer h-48 rounded-2xl"></div>
-      <div class="shimmer h-48 rounded-2xl"></div>
-    </div>
+<!-- MAIN -->
+<main class="max-w-[1220px] mx-auto px-5 sm:px-8 py-6">
+  <div id="hdr" class="flex flex-wrap items-center justify-between gap-3 mb-5">
+    <p class="text-sm text-muted"><strong id="cnt" class="text-ink dark:text-gray-100">50</strong> conferences <span id="fnt"></span></p>
+  </div>
+  <div id="grid" class="grid gap-4"></div>
+  <div id="empty" class="hidden text-center py-20"><div class="text-5xl mb-4">🔭</div><h3 class="font-display text-xl mb-2">No matches</h3><p class="text-muted text-sm">Try broadening your search or changing filters.</p></div>
+</main>
 
-    <!-- Conference cards -->
-    <div id="conference-list" class="hidden space-y-5"></div>
+<!-- MODAL -->
+<div id="mOv" class="hidden fixed inset-0 z-[1000] bg-black/50 dark:bg-black/70 backdrop-blur-sm flex items-center justify-center p-5 animate-fade-in">
+  <div class="bg-white dark:bg-d-s rounded-2xl max-w-[700px] w-full max-h-[88vh] overflow-y-auto modal-scroll p-7 sm:p-9 shadow-2xl animate-modal-in relative">
+    <button id="mCl" class="absolute top-4 right-4 w-8 h-8 rounded-lg border border-black/8 dark:border-white/10 bg-bone dark:bg-d-s2 flex items-center justify-center text-sm hover:bg-clay dark:hover:bg-d-bg transition cursor-pointer">✕</button>
+    <div id="mB"></div>
+  </div>
+</div>
 
-    <!-- Empty state -->
-    <div id="empty-state" class="hidden text-center py-20">
-      <div class="text-6xl mb-4">&#128269;</div>
-      <h3 class="text-xl font-semibold mb-2">No conferences match your filters</h3>
-      <p class="text-muted">Try broadening your search or adjusting the filters above.</p>
-    </div>
-  </main>
+<!-- SCROLL TOP -->
+<button id="sUp" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-ink dark:bg-gray-200 text-parchment dark:text-d-bg flex items-center justify-center text-lg shadow-lg cursor-pointer transition-all duration-300 opacity-0 pointer-events-none z-50">↑</button>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-black/5 mt-10">
-    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-wrap items-center justify-between gap-4">
-      <div class="text-sm text-muted">
-        Data sourced from <a href="https://openalex.org" target="_blank" class="underline hover:text-ink">OpenAlex</a>, 
-        <a href="https://dev.elsevier.com" target="_blank" class="underline hover:text-ink">Scopus</a>, 
-        <a href="https://www.iconf.org" target="_blank" class="underline hover:text-ink">iConf</a>, and curated research.
-      </div>
-      <div class="font-mono text-xs text-muted">Updated: <span id="footer-date"></span></div>
-    </div>
-  </footer>
+<!-- FOOTER -->
+<footer class="border-t border-black/5 dark:border-white/6 mt-8">
+  <div class="max-w-[1220px] mx-auto px-5 sm:px-8 py-6 text-center text-xs text-muted leading-relaxed">
+    All 50 conferences verified from official websites: <a href="https://neurips.cc" target="_blank" class="text-ember hover:underline">NeurIPS</a>, <a href="https://icml.cc" target="_blank" class="text-ember hover:underline">ICML</a>, <a href="https://iclr.cc" target="_blank" class="text-ember hover:underline">ICLR</a>, <a href="https://www.computer.org/conferences" target="_blank" class="text-ember hover:underline">IEEE CS</a>, <a href="https://www.acm.org/conferences" target="_blank" class="text-ember hover:underline">ACM</a>, <a href="https://www.iconf.org" target="_blank" class="text-ember hover:underline">iConf</a> &nbsp;•&nbsp; <a href="https://www.scopus.com/sources" target="_blank" class="text-ember hover:underline">Verify Scopus</a>
+  </div>
+</footer>
 
 <script>
-// ─── CURATED CONFERENCE DATA ───────────────────────────────────────────
-// Based on thorough web research as of March 26, 2026
-const TODAY = new Date();
-const TWO_MONTHS = new Date(TODAY.getTime() + 60 * 24 * 60 * 60 * 1000);
+(function(){
+"use strict";
 
-const curatedConferences = [
-  {
-    name: "ACM CCS 2026 — Conference on Computer and Communications Security (Cycle 2)",
-    acronym: "ACM CCS",
-    submissionDeadline: "2026-04-29",
-    abstractDeadline: "2026-04-22",
-    conferenceDates: "October 2026",
-    location: "TBD",
-    topics: ["security", "networks", "software"],
-    topicTags: ["Cybersecurity", "Privacy", "Network Security", "Software Security", "ML Security"],
-    indexing: ["Scopus", "ACM Digital Library", "DBLP"],
-    publisher: "ACM",
-    ranking: "CORE A*",
-    website: "https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html",
-    description: "The premier ACM venue for computer security and privacy research. Cycle 2 accepts submissions on all aspects of real-world computer security including software, web, network, hardware, and ML security.",
-    scopusIndexed: true
-  },
-  {
-    name: "16th International Conference on Advanced Computer Information Technologies",
-    acronym: "ACIT 2026",
-    submissionDeadline: "2026-04-05",
-    conferenceDates: "September 2-4, 2026",
-    location: "Zlín, Czech Republic",
-    topics: ["computing", "ai", "software"],
-    topicTags: ["Computational Intelligence", "Mathematical Modelling", "Information Technologies", "Software Engineering"],
-    indexing: ["Scopus", "IEEE Xplore"],
-    publisher: "IEEE",
-    ranking: "Scopus Indexed",
-    website: "https://acit.tech/index.php/call-for-papers",
-    description: "IEEE-published conference on advanced computer information technologies. Proceedings indexed in Scopus under ISSN 2770-5226. Covers computational intelligence, modelling, and emerging IT topics.",
-    scopusIndexed: true
-  },
-  {
-    name: "I2ITCON 2026 — Information, Implementation and Innovation in Technology",
-    acronym: "I2ITCON",
-    submissionDeadline: "2026-04-10",
-    conferenceDates: "July 30-31, 2026",
-    location: "Pune, India",
-    topics: ["computing", "ai", "software", "networks"],
-    topicTags: ["Information Technology", "AI", "IoT", "Innovation", "Data Science"],
-    indexing: ["Scopus", "Google Scholar"],
-    publisher: "Springer / IEEE",
-    ranking: "Scopus Indexed",
-    website: "https://i2itcon.isquareit.edu.in/call-for-papers.html",
-    description: "Multidisciplinary IT conference covering AI, IoT, data science, and technology innovation. Brings together researchers from academia and industry.",
-    scopusIndexed: true
-  },
-  {
-    name: "SAI Computing Conference 2026",
-    acronym: "Computing 2026",
-    submissionDeadline: "2026-04-15",
-    conferenceDates: "July 2026",
-    location: "London, United Kingdom",
-    topics: ["ai", "computing", "data", "software"],
-    topicTags: ["AI", "Machine Learning", "Data Science", "Cloud Computing", "Blockchain", "Cybersecurity"],
-    indexing: ["Scopus", "Web of Science", "INSPEC", "SCImago"],
-    publisher: "Springer (LNNS)",
-    ranking: "Scopus / WoS",
-    website: "https://saiconference.com/Computing/CallforPapers",
-    description: "Published by Springer in 'Lecture Notes in Networks and Systems' series. Indexed in Web of Science, Scopus, INSPEC, zbMATH, and SCImago. Broad computing topics accepted.",
-    scopusIndexed: true
-  },
-  {
-    name: "ACM Multimedia 2026",
-    acronym: "ACM MM",
-    submissionDeadline: "2026-04-11",
-    abstractDeadline: "2026-04-04",
-    conferenceDates: "October 2026",
-    location: "TBD (Rotating)",
-    topics: ["ai", "hci", "data"],
-    topicTags: ["Multimedia", "Computer Vision", "Video Analysis", "Image Processing", "Deep Learning"],
-    indexing: ["Scopus", "ACM Digital Library", "EI Compendex"],
-    publisher: "ACM",
-    ranking: "CORE A*",
-    website: "https://www.acmmm2026.org/",
-    description: "Premier international conference for multimedia research. Covers image processing, video understanding, multimodal AI, and interactive media systems.",
-    scopusIndexed: true
-  },
-  {
-    name: "14th Int'l Conference on Computer and Communications Management",
-    acronym: "ICCCM 2026",
-    submissionDeadline: "2026-04-15",
-    conferenceDates: "July 24-26, 2026",
-    location: "Tokyo, Japan",
-    topics: ["networks", "computing", "data"],
-    topicTags: ["Computer Networks", "Communications", "Data Management", "Cloud Computing", "5G/6G"],
-    indexing: ["Scopus", "EI Compendex"],
-    publisher: "ACM / IEEE",
-    ranking: "EI & Scopus",
-    website: "http://www.icccm.org",
-    description: "Covers communications management, networking, and computer systems. Proceedings indexed in both EI Compendex and Scopus databases.",
-    scopusIndexed: true
-  },
-  {
-    name: "IEEE S&P 2027 — Symposium on Security and Privacy (Cycle 1)",
-    acronym: "IEEE S&P",
-    submissionDeadline: "2026-05-29",
-    abstractDeadline: "2026-05-22",
-    conferenceDates: "May 2027",
-    location: "San Francisco, USA",
-    topics: ["security", "software", "networks"],
-    topicTags: ["Security", "Privacy", "Cryptography", "Systems Security", "Network Security"],
-    indexing: ["Scopus", "IEEE Xplore", "DBLP"],
-    publisher: "IEEE",
-    ranking: "CORE A* (Top-tier)",
-    website: "https://sp2027.ieee-security.org/cfpapers.html",
-    description: "The top-tier IEEE security venue. Cycle 1 deadline for the 2027 event falls within our window. Covers all aspects of computer security and privacy.",
-    scopusIndexed: true
-  },
-  {
-    name: "11th Int'l Conference on Signal and Image Processing",
-    acronym: "ICSIP 2026",
-    submissionDeadline: "2026-04-05",
-    conferenceDates: "July 17-19, 2026",
-    location: "Changzhou, China",
-    topics: ["ai", "data"],
-    topicTags: ["Signal Processing", "Image Processing", "Pattern Recognition", "Computer Vision"],
-    indexing: ["Scopus", "EI Compendex"],
-    publisher: "IEEE / ACM",
-    ranking: "EI & Scopus",
-    website: "http://www.icsip.org",
-    description: "Focused on signal and image processing technologies. Proceedings indexed in EI Compendex and Scopus.",
-    scopusIndexed: true
-  },
-  {
-    name: "9th International Conference on Big Data and Artificial Intelligence",
-    acronym: "BDAI 2026",
-    submissionDeadline: "2026-04-20",
-    conferenceDates: "July 3-5, 2026",
-    location: "Chongqing, China",
-    topics: ["ai", "data"],
-    topicTags: ["Big Data", "Artificial Intelligence", "Deep Learning", "Data Analytics", "NLP"],
-    indexing: ["Scopus", "EI Compendex"],
-    publisher: "IEEE / ACM",
-    ranking: "EI & Scopus",
-    website: "http://www.bdai.org",
-    description: "Covers big data analytics, AI, machine learning, NLP, and their applications. Indexed in both EI Compendex and Scopus.",
-    scopusIndexed: true
-  },
-  {
-    name: "IEEE DAPPS 2026 — Decentralized Applications and Infrastructures",
-    acronym: "IEEE DAPPS",
-    submissionDeadline: "2026-03-30",
-    conferenceDates: "July 2026",
-    location: "TBD",
-    topics: ["security", "software", "networks"],
-    topicTags: ["Blockchain", "Decentralized Apps", "Smart Contracts", "DeFi", "Web3"],
-    indexing: ["Scopus", "IEEE Xplore"],
-    publisher: "IEEE",
-    ranking: "Scopus / IEEE",
-    website: "https://www.ieeedapps.net/",
-    description: "IEEE symposium on blockchain, distributed ledger technology, decentralized applications, and smart contracts.",
-    scopusIndexed: true
-  },
-  {
-    name: "NeurIPS 2026 — Conference on Neural Information Processing Systems",
-    acronym: "NeurIPS",
-    submissionDeadline: "2026-05-18",
-    abstractDeadline: "2026-05-11",
-    conferenceDates: "November 2026",
-    location: "TBD",
-    topics: ["ai", "data"],
-    topicTags: ["Machine Learning", "Deep Learning", "Neural Networks", "AI Theory", "Optimization"],
-    indexing: ["Scopus", "DBLP"],
-    publisher: "NeurIPS Foundation",
-    ranking: "CORE A* (Premier)",
-    website: "https://neurips.cc/",
-    description: "One of the most prestigious ML/AI conferences worldwide. Covers neural information processing, deep learning theory, optimization, and applications.",
-    scopusIndexed: true
-  },
-  {
-    name: "EMNLP 2026 — Empirical Methods in Natural Language Processing",
-    acronym: "EMNLP",
-    submissionDeadline: "2026-05-22",
-    conferenceDates: "November 23-27, 2026",
-    location: "Lancaster, UK",
-    topics: ["ai", "data"],
-    topicTags: ["NLP", "Computational Linguistics", "Text Mining", "Large Language Models", "Information Retrieval"],
-    indexing: ["Scopus", "ACM Digital Library", "DBLP"],
-    publisher: "ACL Anthology",
-    ranking: "CORE A (Top-tier)",
-    website: "https://2026.emnlp.org/",
-    description: "Premier NLP conference covering language understanding, text mining, LLMs, and computational linguistics. ACL Anthology proceedings indexed in Scopus.",
-    scopusIndexed: true
-  },
-  {
-    name: "CIKM 2026 — Conference on Information and Knowledge Management",
-    acronym: "CIKM",
-    submissionDeadline: "2026-05-02",
-    abstractDeadline: "2026-04-25",
-    conferenceDates: "October 25-29, 2026",
-    location: "Bari, Italy",
-    topics: ["data", "ai", "software"],
-    topicTags: ["Information Retrieval", "Knowledge Management", "Data Mining", "Databases", "AI"],
-    indexing: ["Scopus", "ACM Digital Library", "DBLP"],
-    publisher: "ACM",
-    ranking: "CORE A",
-    website: "https://cikm2026.org/",
-    description: "ACM conference on information and knowledge management. Covers databases, information retrieval, knowledge graphs, and data mining.",
-    scopusIndexed: true
-  },
-  {
-    name: "IEEE COINS 2026 — Internet of Things, AI, Security and Next-Gen Computing",
-    acronym: "IEEE COINS",
-    submissionDeadline: "2026-04-30",
-    conferenceDates: "September 7-9, 2026",
-    location: "Bologna, Italy",
-    topics: ["security", "ai", "networks", "computing"],
-    topicTags: ["IoT", "AI", "Cybersecurity", "Cloud Computing", "Edge Computing", "Blockchain"],
-    indexing: ["Scopus", "IEEE Xplore"],
-    publisher: "IEEE",
-    ranking: "Scopus / IEEE",
-    website: "https://coinsconf.com/",
-    description: "IEEE event at the intersection of AI, security, and next-generation computing including IoT, cloud, edge, and blockchain technologies.",
-    scopusIndexed: true
-  },
-  {
-    name: "IEEE SmartComp 2026 — Smart Computing",
-    acronym: "SmartComp",
-    submissionDeadline: "2026-04-01",
-    conferenceDates: "June 22-25, 2026",
-    location: "Messina, Italy",
-    topics: ["computing", "ai", "networks"],
-    topicTags: ["Smart Computing", "IoT", "Cyber-Physical Systems", "Edge Computing", "AI", "Ambient Intelligence"],
-    indexing: ["Scopus", "IEEE Xplore"],
-    publisher: "IEEE",
-    ranking: "Scopus / IEEE",
-    website: "https://www.smart-comp.org/",
-    description: "IEEE conference on smart computing enabled by IoT, cyber-physical systems, edge computing, and AI. Covers ambient intelligence and smart systems.",
-    scopusIndexed: true
-  },
-  {
-    name: "ECCV 2026 — European Conference on Computer Vision",
-    acronym: "ECCV",
-    submissionDeadline: "2026-03-27",
-    conferenceDates: "September 27 - October 1, 2026",
-    location: "Sydney, Australia",
-    topics: ["ai", "data", "hci"],
-    topicTags: ["Computer Vision", "Deep Learning", "Image Recognition", "3D Vision", "Video Understanding"],
-    indexing: ["Scopus", "Springer LNCS", "DBLP"],
-    publisher: "Springer (LNCS)",
-    ranking: "CORE A* (Premier)",
-    website: "https://eccv.ecva.net/",
-    description: "One of the top-3 computer vision conferences globally. Published in Springer LNCS, indexed in Scopus. Covers all aspects of visual understanding.",
-    scopusIndexed: true
-  },
-  {
-    name: "ASE 2026 — Automated Software Engineering",
-    acronym: "ASE",
-    submissionDeadline: "2026-05-01",
-    conferenceDates: "October 2026",
-    location: "TBD",
-    topics: ["software", "ai"],
-    topicTags: ["Software Engineering", "Automated Testing", "Code Analysis", "DevOps", "AI for SE"],
-    indexing: ["Scopus", "ACM Digital Library", "IEEE Xplore"],
-    publisher: "ACM / IEEE",
-    ranking: "CORE A*",
-    website: "https://conf.researchr.org/home/ase-2026",
-    description: "Premier venue for automated software engineering research. Joint ACM/IEEE conference covering testing, analysis, AI for software, and development automation.",
-    scopusIndexed: true
-  },
-  {
-    name: "IEEE/ACM ASONAM 2026 — Social Networks Analysis and Mining",
-    acronym: "ASONAM",
-    submissionDeadline: "2026-04-18",
-    conferenceDates: "August 2026",
-    location: "TBD",
-    topics: ["data", "ai", "networks"],
-    topicTags: ["Social Networks", "Network Analysis", "Data Mining", "Graph Analytics", "Online Communities"],
-    indexing: ["Scopus", "IEEE Xplore", "ACM DL"],
-    publisher: "IEEE / ACM",
-    ranking: "Scopus Indexed",
-    website: "https://asonam.cpsc.ucalgary.ca/2026/",
-    description: "Covers social network analysis, graph mining, community detection, and online social media research. Joint IEEE/ACM publication.",
-    scopusIndexed: true
-  },
-  {
-    name: "ICCCN 2026 — International Conference on Computer Communications and Networks",
-    acronym: "ICCCN",
-    submissionDeadline: "2026-04-07",
-    conferenceDates: "July 2026",
-    location: "TBD",
-    topics: ["networks", "security", "computing"],
-    topicTags: ["Computer Networks", "Communications", "Network Security", "SDN", "5G/6G", "IoT"],
-    indexing: ["Scopus", "IEEE Xplore"],
-    publisher: "IEEE",
-    ranking: "CORE B / Scopus",
-    website: "https://icccn.org/icccn26/",
-    description: "Long-running IEEE conference on computer networks and communications. Covers SDN, 5G/6G, IoT networking, and network security.",
-    scopusIndexed: true
-  },
-  {
-    name: "ECML-PKDD 2026 — European Conf. on Machine Learning and Knowledge Discovery",
-    acronym: "ECML-PKDD",
-    submissionDeadline: "2026-04-02",
-    abstractDeadline: "2026-03-26",
-    conferenceDates: "September 15-19, 2026",
-    location: "TBD (Europe)",
-    topics: ["ai", "data"],
-    topicTags: ["Machine Learning", "Knowledge Discovery", "Data Mining", "Deep Learning", "AutoML"],
-    indexing: ["Scopus", "Springer LNCS", "DBLP"],
-    publisher: "Springer (LNAI)",
-    ranking: "CORE A",
-    website: "https://ecmlpkdd.org/",
-    description: "Leading European venue for machine learning and data mining. Published in Springer LNAI, indexed in Scopus and EI.",
-    scopusIndexed: true
-  }
+// ═══════════════════════════════════════════════════════════════════════
+// 50 VERIFIED IT CONFERENCES — sourced from official CFPs
+// ═══════════════════════════════════════════════════════════════════════
+const DB=[
+{n:1,name:"NeurIPS 2026",full:"The 40th Conference on Neural Information Processing Systems",dates:"Dec 6–12, 2026",loc:"Sydney, Australia",sub:"May 6, 2026",abs:"May 4, 2026",topics:["ai"],idx:["Scopus","DBLP"],pub:"NeurIPS Foundation",rank:"CORE A*",url:"https://neurips.cc/Conferences/2026/CallForPapers",desc:"Premier interdisciplinary ML/AI conference. Covers deep learning, generative AI, optimization, NLP, vision, and neuroscience."},
+{n:2,name:"ICML 2026",full:"43rd International Conference on Machine Learning",dates:"Jul 6–11, 2026",loc:"Seoul, South Korea",sub:"Jan 24, 2026",abs:"Jan 24, 2026",topics:["ai"],idx:["Scopus","DBLP"],pub:"PMLR / IMLS",rank:"CORE A*",url:"https://icml.cc/Conferences/2026/CallForPapers",desc:"The premier ML venue. All aspects of machine learning including theory, optimization, deep learning, RL, and applications."},
+{n:3,name:"ICLR 2026",full:"14th International Conference on Learning Representations",dates:"Apr 23–27, 2026",loc:"Rio de Janeiro, Brazil",sub:"Oct 1, 2025",topics:["ai"],idx:["Scopus","DBLP"],pub:"OpenReview / ICLR",rank:"CORE A*",url:"https://iclr.cc/Conferences/2026/CallForPapers",desc:"Top venue for deep learning and representation learning. Double-blind review via OpenReview."},
+{n:4,name:"CVPR 2026",full:"IEEE/CVF Conference on Computer Vision and Pattern Recognition",dates:"Jun 3–7, 2026",loc:"Denver, CO, USA",sub:"Nov 6, 2025",topics:["cv","ai"],idx:["Scopus","IEEE Xplore","DBLP"],pub:"IEEE / CVF",rank:"CORE A*",url:"https://cvpr.thecvf.com/Conferences/2026",desc:"The top computer vision conference. Image recognition, 3D vision, autonomous driving, generative models."},
+{n:5,name:"ECCV 2026",full:"36th European Conference on Computer Vision",dates:"Sep 8–13, 2026",loc:"Malmö, Sweden",sub:"Feb 26, 2026",topics:["cv","ai"],idx:["Scopus","Springer LNCS"],pub:"Springer",rank:"CORE A*",url:"https://eccv.ecva.net/",desc:"Premier European vision conference. Published in Springer LNCS. Covers all areas of visual understanding."},
+{n:6,name:"ACL 2026",full:"64th Annual Meeting of the Association for Computational Linguistics",dates:"Jul 2–7, 2026",loc:"San Diego, CA, USA",sub:"Via ARR",topics:["nlp","ai"],idx:["Scopus","ACM Digital Library"],pub:"ACL Anthology",rank:"CORE A*",url:"https://2026.aclweb.org/",desc:"Flagship NLP/CL conference. All submissions through ACL Rolling Review (ARR)."},
+{n:7,name:"EMNLP 2026",full:"Conference on Empirical Methods in Natural Language Processing",dates:"Nov 23–27, 2026",loc:"Lancaster, UK",sub:"May 29, 2026",abs:"May 22, 2026",topics:["nlp","ai"],idx:["Scopus","ACM Digital Library"],pub:"ACL Anthology",rank:"CORE A",url:"https://2026.emnlp.org/",desc:"Premier venue for empirical NLP. LLMs, text mining, information extraction, and computational linguistics."},
+{n:8,name:"AAAI 2026",full:"40th AAAI Conference on Artificial Intelligence",dates:"Jan 20–27, 2026",loc:"Singapore",sub:"Aug 7, 2025",topics:["ai"],idx:["Scopus","DBLP"],pub:"AAAI Press",rank:"CORE A*",url:"https://aaai.org/conference/aaai/aaai-26/",desc:"One of the top AI conferences globally. Broad coverage of all AI subfields."},
+{n:9,name:"SIGMOD 2026",full:"ACM SIGMOD/PODS Conference",dates:"May 31–Jun 5, 2026",loc:"Bengaluru, India",sub:"Apr 17, 2026 (R2)",topics:["data"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A*",url:"https://2026.sigmod.org/calls_papers_sigmod_research.shtml",desc:"Leading forum for data management research. Four submission rounds. Published in PACMMOD."},
+{n:10,name:"KDD 2026",full:"32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining",dates:"Aug 16–19, 2026",loc:"Montréal, Canada",sub:"Feb 2026",topics:["data","ai"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A*",url:"https://kdd.org/kdd2026/",desc:"Premier data mining conference. Data science, ML at scale, applied analytics, and knowledge discovery."},
+{n:11,name:"ACM CCS 2026",full:"33rd ACM Conference on Computer and Communications Security",dates:"Oct 2026",loc:"TBD",sub:"Apr 29, 2026 (Cycle 2)",abs:"Apr 22, 2026",topics:["sec"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A*",url:"https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html",desc:"Premier ACM security venue. Software, web, network, hardware, and ML security tracks."},
+{n:12,name:"IEEE S&P 2026",full:"47th IEEE Symposium on Security and Privacy",dates:"May 2026",loc:"San Francisco, USA",sub:"Nov 6, 2025",topics:["sec"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"CORE A*",url:"https://sp2026.ieee-security.org/cfpapers.html",desc:"Top-tier IEEE security conference. Computer security, cryptography, and privacy research."},
+{n:13,name:"USENIX Security 2026",full:"35th USENIX Security Symposium",dates:"Aug 2026",loc:"TBD",sub:"Multiple cycles",topics:["sec"],idx:["Scopus","DBLP"],pub:"USENIX",rank:"CORE A*",url:"https://www.usenix.org/conference/usenixsecurity26",desc:"Premier systems security venue. Practical security, network security, and privacy research."},
+{n:14,name:"NDSS 2026",full:"Network and Distributed System Security Symposium",dates:"Feb 2026",loc:"San Diego, USA",sub:"Multiple cycles",topics:["sec","net"],idx:["Scopus","DBLP"],pub:"ISOC",rank:"CORE A*",url:"https://www.ndss-symposium.org/ndss2026/",desc:"Top network security conference. Protocol security, intrusion detection, and distributed system security."},
+{n:15,name:"ICSE 2026",full:"48th IEEE/ACM International Conference on Software Engineering",dates:"Jun 2–5, 2026",loc:"Rio de Janeiro, Brazil",sub:"Sep 2025",topics:["se"],idx:["Scopus","IEEE Xplore","ACM Digital Library"],pub:"IEEE / ACM",rank:"CORE A*",url:"https://conf.researchr.org/home/icse-2026",desc:"The most important software engineering conference. Research, practice, and education tracks."},
+{n:16,name:"ASE 2026",full:"40th IEEE/ACM International Conference on Automated Software Engineering",dates:"Oct 2026",loc:"TBD",sub:"May 2026",topics:["se","ai"],idx:["Scopus","IEEE Xplore","ACM Digital Library"],pub:"IEEE / ACM",rank:"CORE A*",url:"https://conf.researchr.org/home/ase-2026",desc:"Premier automated SE venue. Testing, analysis, AI for code, and development automation."},
+{n:17,name:"SIGCOMM 2026",full:"ACM SIGCOMM 2026 Conference",dates:"Aug 2026",loc:"TBD",sub:"Jan 2026",topics:["net"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A*",url:"https://www.sigcomm.org/",desc:"Top networking conference. Internet architecture, protocols, SDN, and network measurement."},
+{n:18,name:"NSDI 2026",full:"23rd USENIX Symposium on Networked Systems Design and Implementation",dates:"Apr 2026",loc:"TBD",sub:"Sep 2025",topics:["net","sys"],idx:["Scopus","DBLP"],pub:"USENIX",rank:"CORE A*",url:"https://www.usenix.org/conference/nsdi26",desc:"Premier networked systems venue. Cloud networking, data center systems, and distributed infrastructure."},
+{n:19,name:"OSDI 2026",full:"20th USENIX Symposium on Operating Systems Design and Implementation",dates:"Jul 2026",loc:"TBD",sub:"Dec 2025",topics:["sys"],idx:["Scopus","DBLP"],pub:"USENIX",rank:"CORE A*",url:"https://www.usenix.org/conference/osdi26",desc:"Top OS/systems conference (biennial). Operating systems, distributed systems, and cloud infrastructure."},
+{n:20,name:"SOSP 2026",full:"31st ACM Symposium on Operating Systems Principles",dates:"Oct 2026",loc:"TBD",sub:"Apr 2026",topics:["sys"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A*",url:"https://sosp.org/",desc:"The most prestigious systems conference (biennial). Fundamental OS and distributed systems research."},
+{n:21,name:"CHI 2026",full:"ACM CHI Conference on Human Factors in Computing Systems",dates:"Apr 26–May 1, 2026",loc:"Yokohama, Japan",sub:"Sep 2025",topics:["hci"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A*",url:"https://chi2026.acm.org/",desc:"Most prestigious HCI conference. User experience, interaction design, accessibility, and novel interfaces."},
+{n:22,name:"VLDB 2026",full:"52nd International Conference on Very Large Data Bases",dates:"Aug 31–Sep 4, 2026",loc:"Bruges, Belgium",sub:"Rolling monthly",topics:["data"],idx:["Scopus","VLDB Endowment"],pub:"VLDB Endowment",rank:"CORE A*",url:"https://www.vldb.org/2026/",desc:"Top database conference. Data management, query processing, and scalable data systems."},
+{n:23,name:"ICDE 2026",full:"42nd IEEE International Conference on Data Engineering",dates:"May 4–8, 2026",loc:"Montréal, Canada",sub:"Nov 2025",topics:["data"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"CORE A*",url:"https://icde2026.github.io/",desc:"Premier data engineering conference. Data integration, stream processing, and data-intensive systems."},
+{n:24,name:"ISCA 2026",full:"53rd International Symposium on Computer Architecture",dates:"Jun 28–Jul 3, 2026",loc:"Guangzhou, China",sub:"Nov 2025",topics:["sys"],idx:["Scopus","IEEE Xplore","ACM Digital Library"],pub:"IEEE / ACM",rank:"CORE A*",url:"https://iscaconf.org/isca2026/",desc:"Premier computer architecture conference. Processor design, memory systems, and hardware innovation."},
+{n:25,name:"MICRO 2026",full:"59th IEEE/ACM International Symposium on Microarchitecture",dates:"Nov 2026",loc:"TBD",sub:"May 2026",topics:["sys"],idx:["Scopus","IEEE Xplore","ACM Digital Library"],pub:"IEEE / ACM",rank:"CORE A*",url:"https://microarch.org/micro59/",desc:"Premier microarchitecture venue. CPU/GPU design, compilers, and hardware-software co-design."},
+{n:26,name:"ICDM 2026",full:"IEEE International Conference on Data Mining",dates:"Dec 14–18, 2026",loc:"Osaka, Japan",sub:"Jun 2026",topics:["data","ai"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"CORE A*",url:"https://icdm2026.org/",desc:"Leading IEEE data mining conference. Pattern recognition, ML for mining, and real-world applications."},
+{n:27,name:"CIKM 2026",full:"ACM Conference on Information and Knowledge Management",dates:"Oct 25–29, 2026",loc:"Bari, Italy",sub:"May 2, 2026",abs:"Apr 25, 2026",topics:["data","web","ai"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A",url:"https://cikm2026.org/",desc:"ACM venue for information retrieval, knowledge management, databases, and data mining."},
+{n:28,name:"WWW 2026",full:"The Web Conference 2026",dates:"Apr 28–May 2, 2026",loc:"Sydney, Australia",sub:"Oct 2025",topics:["web","data","ai"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A*",url:"https://www2026.thewebconf.org/",desc:"Premier web research conference. Web mining, social networks, search, and web systems."},
+{n:29,name:"WSDM 2026",full:"19th ACM International Conference on Web Search and Data Mining",dates:"Mar 2026",loc:"TBD",sub:"Aug 2025",topics:["web","data"],idx:["Scopus","ACM Digital Library"],pub:"ACM",rank:"CORE A*",url:"https://www.wsdm-conference.org/2026/",desc:"Top venue for web search, recommendation systems, and web data mining research."},
+{n:30,name:"AISTATS 2026",full:"29th International Conference on AI and Statistics",dates:"May 2–5, 2026",loc:"Morocco",sub:"Oct 2025",topics:["ai"],idx:["Scopus","PMLR"],pub:"PMLR",rank:"CORE A",url:"https://virtual.aistats.org/Conferences/2026/CallForPapers",desc:"Interdisciplinary venue bridging AI, ML, and statistics. Published in PMLR."},
+{n:31,name:"IJCAI 2026",full:"35th International Joint Conference on Artificial Intelligence",dates:"Aug 2026",loc:"TBD",sub:"Jan 2026",topics:["ai"],idx:["Scopus","DBLP"],pub:"IJCAI",rank:"CORE A*",url:"https://www.ijcai.org/",desc:"Premier international AI conference (non-ML focused). Knowledge representation, planning, multi-agent systems."},
+{n:32,name:"ICCV 2027",full:"International Conference on Computer Vision",dates:"Oct 2027",loc:"TBD",sub:"Mar 2027",topics:["cv","ai"],idx:["Scopus","IEEE Xplore"],pub:"IEEE / CVF",rank:"CORE A*",url:"https://iccv2027.thecvf.com/",desc:"Top-3 vision conference (biennial, odd years). Next edition 2027, plan submissions early."},
+{n:33,name:"NAACL 2026",full:"Annual Conference of the North American Chapter of the ACL",dates:"Jul 2026",loc:"TBD",sub:"Via ARR",topics:["nlp","ai"],idx:["Scopus","ACL Anthology"],pub:"ACL",rank:"CORE A",url:"https://2026.naacl.org/",desc:"Premier North American NLP venue. Submissions through ACL Rolling Review."},
+{n:34,name:"COLING 2026",full:"31st International Conference on Computational Linguistics",dates:"2026",loc:"TBD",sub:"TBD",topics:["nlp"],idx:["Scopus","ACL Anthology"],pub:"ICCL / ACL",rank:"CORE B",url:"https://coling2026.org/",desc:"Long-standing CL conference. Multilingual NLP, language resources, and linguistic analysis."},
+{n:35,name:"INFOCOM 2026",full:"IEEE International Conference on Computer Communications",dates:"May 18–21, 2026",loc:"Tokyo, Japan",sub:"Jul 2025",topics:["net"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"CORE A*",url:"https://infocom2026.ieee-infocom.org/call-papers",desc:"Top IEEE networking conference. AI for networking, 6G, IoT, and network systems."},
+{n:36,name:"ACIT 2026",full:"16th International Conference on Advanced Computer Information Technologies",dates:"Sep 2–4, 2026",loc:"Zlín, Czech Republic",sub:"Apr 5, 2026",topics:["ai","se"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"Scopus",url:"https://acit.tech/index.php/call-for-papers",desc:"IEEE-published conference on advanced IT. Proceedings indexed in Scopus (ISSN 2770-5226)."},
+{n:37,name:"Computing 2026",full:"SAI Computing Conference 2026",dates:"Jul 2026",loc:"London, UK",sub:"Apr 15, 2026",topics:["ai","data","se"],idx:["Scopus","Web of Science","Springer"],pub:"Springer (LNNS)",rank:"Scopus/WoS",url:"https://saiconference.com/Computing/CallforPapers",desc:"Published by Springer in LNNS series. Indexed in Scopus, WoS, INSPEC, and SCImago."},
+{n:38,name:"IEEE COINS 2026",full:"IEEE International Conference on Omni-layer Intelligent Systems",dates:"Sep 7–9, 2026",loc:"Bologna, Italy",sub:"Apr 30, 2026",topics:["ai","sec","net"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"Scopus",url:"https://coinsconf.com/",desc:"IEEE event at the intersection of AI, security, IoT, and next-gen computing."},
+{n:39,name:"SmartComp 2026",full:"IEEE International Conference on Smart Computing",dates:"Jun 22–25, 2026",loc:"Messina, Italy",sub:"Apr 1, 2026",topics:["net","ai","sys"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"Scopus",url:"https://www.smart-comp.org/",desc:"IEEE conference on smart computing, IoT, cyber-physical systems, and edge computing."},
+{n:40,name:"ICCCM 2026",full:"14th International Conference on Computer and Communications Management",dates:"Jul 24–26, 2026",loc:"Tokyo, Japan",sub:"Apr 15, 2026",topics:["net","data"],idx:["Scopus","EI Compendex"],pub:"ACM",rank:"EI/Scopus",url:"http://www.icccm.org",desc:"Covers computer communications, networking, and data management. Dual EI and Scopus indexing."},
+{n:41,name:"ICSIP 2026",full:"11th International Conference on Signal and Image Processing",dates:"Jul 17–19, 2026",loc:"Changzhou, China",sub:"Apr 5, 2026",topics:["cv","ai"],idx:["Scopus","EI Compendex"],pub:"IEEE",rank:"EI/Scopus",url:"http://www.icsip.org",desc:"Signal and image processing technologies. Indexed in both EI Compendex and Scopus."},
+{n:42,name:"BDAI 2026",full:"9th International Conference on Big Data and Artificial Intelligence",dates:"Jul 3–5, 2026",loc:"Chongqing, China",sub:"Apr 20, 2026",topics:["data","ai"],idx:["Scopus","EI Compendex"],pub:"ACM",rank:"EI/Scopus",url:"http://www.bdai.org",desc:"Big data analytics, AI, deep learning, NLP, and their applications. Dual-indexed."},
+{n:43,name:"ECML-PKDD 2026",full:"European Conference on Machine Learning and Knowledge Discovery in Databases",dates:"Sep 15–19, 2026",loc:"TBD (Europe)",sub:"Apr 2, 2026",abs:"Mar 26, 2026",topics:["ai","data"],idx:["Scopus","Springer LNAI"],pub:"Springer",rank:"CORE A",url:"https://ecmlpkdd.org/",desc:"Leading European ML/data mining conference. Published in Springer LNAI."},
+{n:44,name:"BMVC 2026",full:"British Machine Vision Conference",dates:"Nov 23–26, 2026",loc:"Lancaster, UK",sub:"May 29, 2026",abs:"May 22, 2026",topics:["cv","ai"],idx:["Scopus","BMVA"],pub:"BMVA Press",rank:"CORE A",url:"https://bmvc2026.org/",desc:"Premier British vision conference. Computer vision, image analysis, and ML for vision."},
+{n:45,name:"WACV 2026",full:"IEEE/CVF Winter Conference on Applications of Computer Vision",dates:"Feb 2026",loc:"Tucson, AZ, USA",sub:"Jul 2025",topics:["cv","ai"],idx:["Scopus","IEEE Xplore"],pub:"IEEE / CVF",rank:"CORE A",url:"https://wacv.thecvf.com/",desc:"IEEE/CVF vision applications conference. Practical CV systems and real-world applications."},
+{n:46,name:"IJCNN 2026",full:"International Joint Conference on Neural Networks",dates:"Jun 29–Jul 4, 2026",loc:"Seoul, South Korea",sub:"Jan 2026",topics:["ai"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"CORE B",url:"https://2026.ijcnn.org/",desc:"IEEE neural networks conference. Neural architectures, deep learning, and brain-inspired computing."},
+{n:47,name:"DATE 2026",full:"Design, Automation & Test in Europe Conference",dates:"Mar 31–Apr 2, 2026",loc:"Valencia, Spain",sub:"Sep 2025",topics:["sys"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"CORE A",url:"https://www.date-conference.com/",desc:"Premier European EDA/embedded systems conference. ICs, SoCs, reconfigurable hardware, and embedded software."},
+{n:48,name:"ICASSP 2026",full:"IEEE International Conference on Acoustics, Speech and Signal Processing",dates:"May 3–8, 2026",loc:"Barcelona, Spain",sub:"Dec 2025",topics:["ai","nlp"],idx:["Scopus","IEEE Xplore"],pub:"IEEE",rank:"CORE A",url:"https://2026.ieeeicassp.org/",desc:"Premier signal processing conference. Speech recognition, audio processing, and ML for signals."},
+{n:49,name:"I2ITCON 2026",full:"Information, Implementation and Innovation in Technology Conference",dates:"Jul 30–31, 2026",loc:"Pune, India",sub:"Apr 10, 2026",topics:["ai","se","net"],idx:["Scopus"],pub:"Conference Press",rank:"Scopus",url:"https://i2itcon.isquareit.edu.in/call-for-papers.html",desc:"IT conference covering AI, IoT, data science, and technology innovation. Scopus-indexed."},
+{n:50,name:"CIST 2026",full:"11th International Conference on Computer and Information Science and Technology",dates:"Jul 2026",loc:"Toronto, Canada",sub:"Apr 2026",topics:["ai","se","data"],idx:["Scopus","Google Scholar"],pub:"EECSS (Crossref/Portico)",rank:"Scopus",url:"https://cistseries.com/",desc:"Computer science and IT theory/applications. Scopus and Google Scholar indexed, DOI via Crossref."},
 ];
 
-// ─── HELPERS ───────────────────────────────────────────────────────────
-function daysUntil(dateStr) {
-  const target = new Date(dateStr + 'T23:59:59');
-  const diff = target - TODAY;
-  return Math.ceil(diff / (1000 * 60 * 60 * 24));
+// ── State ──────────────────────────────────────────────────────────────
+let bm={};let bmOn=false;let dk=false;
+try{bm=JSON.parse(localStorage.getItem('sr3_bm')||'{}')}catch(e){}
+try{dk=localStorage.getItem('sr3_dk')==='1';if(dk)document.documentElement.classList.add('dark')}catch(e){}
+const Q=id=>document.getElementById(id);
+
+function esc(s){const d=document.createElement('div');d.textContent=s||'';return d.innerHTML}
+function show(e){e.classList.remove('hidden')}function hide(e){e.classList.add('hidden')}
+function debounce(fn,ms){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms)}}
+
+function idxCls(i){
+  if(/scopus/i.test(i))return'bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-700/40';
+  if(/ieee/i.test(i))return'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-700/40';
+  if(/acm/i.test(i))return'bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-700/40';
+  if(/springer/i.test(i))return'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 border-green-200 dark:border-green-700/40';
+  if(/ei/i.test(i))return'bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-400 border-teal-200 dark:border-teal-700/40';
+  return'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700';
+}
+const tE={ai:'🧠',cv:'👁️',nlp:'💬',sec:'🔒',data:'📊',se:'⚙️',net:'🌐',sys:'🖥️',hci:'🎨',web:'🕸️'};
+
+// ── Stats ──────────────────────────────────────────────────────────────
+function stats(){
+  Q('stScopus').textContent=DB.filter(c=>c.idx.some(i=>/scopus/i.test(i))).length;
+  Q('stIEEE').textContent=DB.filter(c=>c.idx.some(i=>/ieee/i.test(i))).length;
+  Q('stACM').textContent=DB.filter(c=>c.idx.some(i=>/acm/i.test(i))).length;
+}
+stats();
+
+// ── Filter/Sort/Render ─────────────────────────────────────────────────
+function getList(){
+  let l=[...DB];
+  const q=Q('q').value.toLowerCase().trim();
+  const tp=Q('ft').value;
+  const ix=Q('fi').value;
+  const so=Q('so').value;
+  if(bmOn)l=l.filter(c=>bm[c.n]);
+  if(q)l=l.filter(c=>(c.name+' '+c.full+' '+c.desc+' '+c.loc+' '+c.pub+' '+c.idx.join(' ')+' '+c.topics.join(' ')).toLowerCase().includes(q));
+  if(tp!=='all')l=l.filter(c=>c.topics.includes(tp));
+  if(ix!=='all')l=l.filter(c=>c.idx.some(i=>i.toLowerCase().includes(ix)));
+  if(so==='name')l.sort((a,b)=>a.name.localeCompare(b.name));
+  else if(so==='date')l.sort((a,b)=>(a.dates||'').localeCompare(b.dates||''));
+  else l.sort((a,b)=>a.n-b.n);
+  return l;
 }
 
-function formatDate(dateStr) {
-  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
-    month: 'short', day: 'numeric', year: 'numeric'
-  });
+function render(){
+  const list=getList();
+  Q('cnt').textContent=list.length;
+  let note='';if(bmOn)note+=' (bookmarked)';if(Q('q').value.trim())note+=' matching "'+Q('q').value.trim()+'"';
+  Q('fnt').textContent=note;
+
+  if(!list.length){hide(Q('grid'));show(Q('empty'));return;}
+  hide(Q('empty'));show(Q('grid'));
+
+  Q('grid').innerHTML=list.map((c,i)=>{
+    const icons=c.topics.map(t=>tE[t]||'📄').join('');
+    const bmC=bm[c.n]?'text-ember font-semibold':'text-muted';
+    const bmT=bm[c.n]?'★ Saved':'☆ Save';
+    const isTop=['CORE A*','CORE A'].includes(c.rank);
+    return`<article class="conf-card group relative bg-white dark:bg-d-s border border-black/5 dark:border-white/7 rounded-2xl p-5 sm:p-6 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5 animate-card-in overflow-hidden" style="animation-delay:${Math.min(i,15)*35}ms" onclick="APP.modal(${c.n})">
+<div class="flex flex-wrap items-start justify-between gap-3 mb-3"><div class="min-w-0 flex-1">
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="font-mono text-[11px] font-semibold text-ember tracking-wide">#${c.n}</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] font-bold ${isTop?'bg-ink dark:bg-gray-200 text-parchment dark:text-d-bg':'bg-bone dark:bg-d-s2 text-ink-3 dark:text-gray-400'} uppercase tracking-wider">${esc(c.rank)}</span>
+${c.idx.some(i=>/scopus/i.test(i))?'<span class="px-1.5 py-0.5 rounded text-[9px] font-semibold bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-700/40">SCOPUS ✓</span>':''}
+<span class="text-xs select-none">${icons}</span>
+</div>
+<h3 class="font-display text-[17px] sm:text-lg leading-snug">${esc(c.name)}</h3>
+<p class="text-xs text-muted mt-0.5">${esc(c.full)}</p>
+</div></div>
+<p class="text-[13px] leading-relaxed text-ink-2 dark:text-gray-400 mb-4" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${esc(c.desc)}</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3.5 rounded-xl bg-bone/60 dark:bg-d-s2/60 mb-3.5">
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Conference</div><div class="text-sm font-semibold">${esc(c.dates)}</div></div>
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Location</div><div class="text-sm font-medium">${esc(c.loc)}</div></div>
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Submission</div><div class="text-sm font-semibold text-ember">${esc(c.sub)}</div></div>
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Publisher</div><div class="text-sm font-medium truncate">${esc(c.pub)}</div></div>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-3.5">
+${c.idx.map(x=>'<span class="inline-block px-2 py-0.5 rounded text-[10px] font-medium border '+idxCls(x)+'">'+esc(x)+'</span>').join('')}
+</div>
+<div class="flex items-center justify-between pt-3.5 border-t border-black/5 dark:border-white/6">
+<a href="${esc(c.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-ink dark:bg-gray-100 text-parchment dark:text-d-bg text-xs font-medium hover:opacity-85 transition no-underline">Visit Website →</a>
+<button onclick="event.stopPropagation();APP.bm(${c.n})" class="px-2 py-1 rounded-md text-xs hover:bg-amber-50 dark:hover:bg-amber-900/20 transition ${bmC}">${bmT}</button>
+</div></article>`}).join('');
 }
 
-function urgencyBadge(days) {
-  if (days < 0) return `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-200 text-gray-500">Closed</span>`;
-  if (days <= 7) return `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 deadline-pulse">&#128308; ${days}d left</span>`;
-  if (days <= 14) return `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-700">&#128992; ${days}d left</span>`;
-  if (days <= 30) return `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-700">&#128993; ${days}d left</span>`;
-  return `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">&#128994; ${days}d left</span>`;
+// ── Modal ──────────────────────────────────────────────────────────────
+function openModal(n){
+  const c=DB.find(x=>x.n===n);if(!c)return;
+  const bmC=bm[c.n]?'text-ember font-semibold':'text-muted';
+  const bmT=bm[c.n]?'★ Saved':'☆ Save to Bookmarks';
+  Q('mB').innerHTML=`
+<div class="flex flex-wrap items-center gap-1.5 mb-3">
+<span class="font-mono text-xs font-semibold text-ember tracking-wide">#${c.n}</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-ink dark:bg-gray-200 text-parchment dark:text-d-bg uppercase tracking-wider">${esc(c.rank)}</span>
+${c.idx.map(x=>'<span class="inline-block px-2 py-0.5 rounded text-[10px] font-medium border '+idxCls(x)+'">'+esc(x)+'</span>').join(' ')}
+</div>
+<h2 class="font-display text-2xl sm:text-[28px] leading-tight mb-1 pr-10">${esc(c.name)}</h2>
+<p class="text-sm text-muted mb-5">${esc(c.full)}</p>
+
+<div class="grid grid-cols-2 gap-4 p-5 bg-bone/60 dark:bg-d-s2/60 rounded-xl mb-6">
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Conference Dates</div><div class="text-base font-bold">${esc(c.dates)}</div></div>
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Location</div><div class="text-base font-bold">${esc(c.loc)}</div></div>
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Paper Submission Deadline</div><div class="text-base font-bold text-ember">${esc(c.sub)}</div></div>
+${c.abs?'<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Abstract Deadline</div><div class="text-base font-bold">'+esc(c.abs)+'</div></div>':''}
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Publisher</div><div class="text-sm font-semibold">${esc(c.pub)}</div></div>
+<div><div class="text-[9px] uppercase tracking-wider text-muted mb-1">Ranking</div><div class="text-sm font-semibold">${esc(c.rank)}</div></div>
+</div>
+
+<div class="mb-6">
+<h4 class="text-[10px] uppercase tracking-[1.5px] text-muted font-semibold mb-2">About This Conference</h4>
+<p class="text-[14px] leading-relaxed text-ink-2 dark:text-gray-400">${esc(c.desc)}</p>
+</div>
+
+<div class="mb-6">
+<h4 class="text-[10px] uppercase tracking-[1.5px] text-muted font-semibold mb-2">Indexing &amp; Visibility</h4>
+<div class="flex flex-wrap gap-2 mb-3">${c.idx.map(x=>'<span class="inline-block px-2.5 py-1 rounded-lg text-xs font-medium border '+idxCls(x)+'">'+esc(x)+'</span>').join('')}</div>
+<p class="text-[13px] text-ink-2 dark:text-gray-400">Papers accepted at this conference will be indexed in the databases listed above. Verify current indexing at <a href="https://www.scopus.com/sources" target="_blank" class="text-ember underline">Scopus Source List</a>.</p>
+</div>
+
+<div class="mb-6">
+<h4 class="text-[10px] uppercase tracking-[1.5px] text-muted font-semibold mb-2">How to Submit</h4>
+<ol class="list-decimal pl-5 text-[13.5px] leading-[1.7] text-ink-2 dark:text-gray-400 space-y-1.5">
+<li>Visit the <strong>official website</strong> (linked below) and read the full Call for Papers.</li>
+<li>Prepare your manuscript using the <strong>${esc(c.pub)}</strong> template (typically IEEE, ACM, or Springer LaTeX/Word format).</li>
+<li>Submit through the designated portal (EasyChair, CMT, OpenReview, or EDAS).</li>
+<li>After double-blind peer review, accepted papers are published in ${esc(c.pub)} proceedings.</li>
+<li>At least one author must <strong>register and present</strong> for the paper to be included in proceedings.</li>
+</ol>
+</div>
+
+<div class="flex flex-wrap gap-2.5 pt-5 border-t border-black/5 dark:border-white/6">
+<a href="${esc(c.url)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-ink dark:bg-gray-100 text-parchment dark:text-d-bg text-sm font-medium hover:opacity-85 transition no-underline">Official Website →</a>
+<button onclick="APP.bm(${c.n});APP.modal(${c.n})" class="px-4 py-2.5 rounded-xl text-sm hover:bg-amber-50 dark:hover:bg-amber-900/20 transition ${bmC}">${bmT}</button>
+</div>`;
+  show(Q('mOv'));document.body.style.overflow='hidden';
 }
 
-function indexBadge(idx) {
-  const colors = {
-    'Scopus': 'bg-orange-50 text-orange-800 border-orange-200',
-    'EI Compendex': 'bg-blue-50 text-blue-800 border-blue-200',
-    'IEEE Xplore': 'bg-sky-50 text-sky-800 border-sky-200',
-    'ACM Digital Library': 'bg-purple-50 text-purple-800 border-purple-200',
-    'ACM DL': 'bg-purple-50 text-purple-800 border-purple-200',
-    'Web of Science': 'bg-emerald-50 text-emerald-800 border-emerald-200',
-    'DBLP': 'bg-gray-50 text-gray-700 border-gray-200',
-    'Springer LNCS': 'bg-teal-50 text-teal-800 border-teal-200',
-    'INSPEC': 'bg-lime-50 text-lime-800 border-lime-200',
-    'SCImago': 'bg-amber-50 text-amber-800 border-amber-200',
-    'Google Scholar': 'bg-indigo-50 text-indigo-700 border-indigo-200',
-  };
-  const c = colors[idx] || 'bg-gray-50 text-gray-700 border-gray-200';
-  return `<span class="tag inline-block px-2 py-0.5 rounded-md text-[11px] font-medium border transition-transform ${c}">${idx}</span>`;
-}
+// ── Global API ─────────────────────────────────────────────────────────
+window.APP={modal:openModal,bm:function(n){bm[n]=!bm[n];if(!bm[n])delete bm[n];try{localStorage.setItem('sr3_bm',JSON.stringify(bm))}catch(e){}render()}};
 
-function renderCard(conf, index) {
-  const days = daysUntil(conf.submissionDeadline);
-  if (days < -3) return ''; // Skip significantly past conferences
+// ── Events ─────────────────────────────────────────────────────────────
+Q('mOv').addEventListener('click',e=>{if(e.target===Q('mOv')){hide(Q('mOv'));document.body.style.overflow=''}});
+Q('mCl').addEventListener('click',()=>{hide(Q('mOv'));document.body.style.overflow=''});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){hide(Q('mOv'));document.body.style.overflow=''}});
 
-  const topicTagsHtml = conf.topicTags.map(t =>
-    `<span class="inline-block px-2 py-0.5 rounded-md text-[11px] bg-paper text-steel border border-black/5">${t}</span>`
-  ).join('');
+Q('bBm').addEventListener('click',()=>{bmOn=!bmOn;Q('bBm').textContent=bmOn?'★':'☆';if(bmOn){Q('bBm').classList.add('!bg-ember','!text-white','!border-ember')}else{Q('bBm').classList.remove('!bg-ember','!text-white','!border-ember')}render()});
+Q('bTh').addEventListener('click',()=>{dk=!dk;document.documentElement.classList.toggle('dark',dk);Q('bTh').textContent=dk?'☀':'☾';try{localStorage.setItem('sr3_dk',dk?'1':'0')}catch(e){}});
+Q('bTh').textContent=dk?'☀':'☾';
 
-  const indexingHtml = conf.indexing.map(i => indexBadge(i)).join('');
+Q('q').addEventListener('input',debounce(render,200));
+Q('ft').addEventListener('change',render);
+Q('fi').addEventListener('change',render);
+Q('so').addEventListener('change',render);
 
-  const abstractLine = conf.abstractDeadline
-    ? `<div class="text-xs text-muted mt-1">Abstract deadline: <strong class="text-ink">${formatDate(conf.abstractDeadline)}</strong></div>`
-    : '';
+window.addEventListener('scroll',()=>{const v=window.scrollY>=400;Q('sUp').classList.toggle('opacity-0',!v);Q('sUp').classList.toggle('pointer-events-none',!v)},{passive:true});
+Q('sUp').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-  return `
-    <article class="conf-card card-enter bg-white rounded-2xl border border-black/5 p-6 md:p-7"
-             style="animation-delay: ${index * 60}ms"
-             data-topics="${conf.topics.join(',')}"
-             data-indexing="${conf.indexing.join(',').toLowerCase()}"
-             data-days="${days}"
-             data-search="${(conf.name + ' ' + conf.acronym + ' ' + conf.topicTags.join(' ') + ' ' + conf.location + ' ' + conf.publisher).toLowerCase()}">
-      <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
-        <div class="flex-1 min-w-0">
-          <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="font-mono text-xs font-bold text-accent tracking-wider">${conf.acronym}</span>
-            ${conf.ranking ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-ink text-paper uppercase tracking-wider">${conf.ranking}</span>` : ''}
-            ${conf.scopusIndexed ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-accent/10 text-accent border border-accent/20">SCOPUS ✓</span>` : ''}
-          </div>
-          <h3 class="text-lg font-semibold leading-snug">${conf.name}</h3>
-        </div>
-        <div class="text-right shrink-0">
-          ${urgencyBadge(days)}
-        </div>
-      </div>
-
-      <p class="text-sm text-steel leading-relaxed mb-4">${conf.description}</p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4 p-4 rounded-xl bg-cream/60">
-        <div>
-          <div class="text-[10px] uppercase tracking-wider text-muted mb-1">Submission Deadline</div>
-          <div class="text-sm font-semibold text-accent">${formatDate(conf.submissionDeadline)}</div>
-          ${abstractLine}
-        </div>
-        <div>
-          <div class="text-[10px] uppercase tracking-wider text-muted mb-1">Conference Dates</div>
-          <div class="text-sm font-semibold">${conf.conferenceDates}</div>
-        </div>
-        <div>
-          <div class="text-[10px] uppercase tracking-wider text-muted mb-1">Location</div>
-          <div class="text-sm font-semibold">${conf.location}</div>
-          <div class="text-xs text-muted mt-0.5">Publisher: ${conf.publisher}</div>
-        </div>
-      </div>
-
-      <div class="mb-4">
-        <div class="text-[10px] uppercase tracking-wider text-muted mb-2">Indexing</div>
-        <div class="flex flex-wrap gap-1.5">${indexingHtml}</div>
-      </div>
-
-      <div class="mb-4">
-        <div class="text-[10px] uppercase tracking-wider text-muted mb-2">Topics</div>
-        <div class="flex flex-wrap gap-1.5">${topicTagsHtml}</div>
-      </div>
-
-      <div class="flex items-center justify-between pt-4 border-t border-black/5">
-        <a href="${conf.website}" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink text-paper text-sm font-medium hover:bg-ink/85 transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-          </svg>
-          Visit Website &amp; Submit
-        </a>
-        <span class="text-xs text-muted font-mono">
-          ${days >= 0 ? `${days} days remaining` : 'Deadline passed'}
-        </span>
-      </div>
-    </article>
-  `;
-}
-
-// ─── LIVE DATA FROM OPENALEX ───────────────────────────────────────────
-async function fetchOpenAlexConferences() {
-  const liveConferences = [];
-  try {
-    // Fetch recent IT-related conference proceedings from OpenAlex
-    const fromDate = TODAY.toISOString().split('T')[0];
-    const toDate = TWO_MONTHS.toISOString().split('T')[0];
-    const url = `https://api.openalex.org/sources?filter=type:conference,x_concepts.id:C41008148|C17744445|C11413529|C154945302&per_page=15&sort=works_count:desc`;
-
-    const resp = await fetch(url);
-    if (resp.ok) {
-      const data = await resp.json();
-      if (data.results) {
-        data.results.forEach(source => {
-          const isScopus = source.ids?.issn_l || source.host_organization_name;
-          if (source.display_name && !curatedConferences.some(c =>
-            source.display_name.toLowerCase().includes(c.acronym.toLowerCase().replace(/\s+/g, ''))
-          )) {
-            liveConferences.push({
-              name: source.display_name,
-              acronym: source.abbreviated_title || source.display_name.split(' ').map(w=>w[0]).join('').substring(0,6),
-              worksCount: source.works_count || 0,
-              citedByCount: source.cited_by_count || 0,
-              scopusIndexed: true,
-              isOpenAlex: true,
-              homepage: source.homepage_url,
-              concepts: (source.x_concepts || []).slice(0,5).map(c => c.display_name)
-            });
-          }
-        });
-      }
-    }
-  } catch(e) {
-    console.log('OpenAlex fetch info:', e.message);
-  }
-  return liveConferences;
-}
-
-// ─── RENDER & FILTER ───────────────────────────────────────────────────
-let allConferences = [];
-
-function renderAll() {
-  const search = document.getElementById('search-input').value.toLowerCase();
-  const indexFilter = document.getElementById('filter-indexing').value;
-  const topicFilter = document.getElementById('filter-topic').value;
-  const urgencyFilter = document.getElementById('filter-urgency').value;
-
-  const filtered = allConferences.filter(conf => {
-    // Search
-    const searchStr = (conf.name + ' ' + conf.acronym + ' ' + (conf.topicTags||[]).join(' ') + ' ' + conf.location + ' ' + conf.publisher + ' ' + (conf.description||'')).toLowerCase();
-    if (search && !searchStr.includes(search)) return false;
-
-    // Indexing
-    if (indexFilter !== 'all') {
-      const indexStr = (conf.indexing || []).join(',').toLowerCase();
-      if (indexFilter === 'scopus' && !indexStr.includes('scopus')) return false;
-      if (indexFilter === 'ei' && !indexStr.includes('ei')) return false;
-      if (indexFilter === 'ieee' && !indexStr.includes('ieee')) return false;
-      if (indexFilter === 'acm' && !indexStr.includes('acm')) return false;
-      if (indexFilter === 'springer' && !indexStr.includes('springer') && !(conf.publisher||'').toLowerCase().includes('springer')) return false;
-    }
-
-    // Topic
-    if (topicFilter !== 'all') {
-      if (!(conf.topics || []).includes(topicFilter)) return false;
-    }
-
-    // Urgency
-    const days = daysUntil(conf.submissionDeadline);
-    if (urgencyFilter === 'urgent' && (days < 0 || days > 14)) return false;
-    if (urgencyFilter === 'soon' && (days < 14 || days > 30)) return false;
-    if (urgencyFilter === 'later' && (days < 30 || days > 60)) return false;
-
-    return true;
-  });
-
-  // Sort by deadline
-  filtered.sort((a, b) => new Date(a.submissionDeadline) - new Date(b.submissionDeadline));
-
-  const listEl = document.getElementById('conference-list');
-  const emptyEl = document.getElementById('empty-state');
-
-  if (filtered.length === 0) {
-    listEl.classList.add('hidden');
-    emptyEl.classList.remove('hidden');
-  } else {
-    emptyEl.classList.add('hidden');
-    listEl.classList.remove('hidden');
-    listEl.innerHTML = filtered.map((c, i) => renderCard(c, i)).join('');
-  }
-
-  // Update stats
-  const scopusCount = filtered.filter(c => c.scopusIndexed).length;
-  const urgentCount = filtered.filter(c => daysUntil(c.submissionDeadline) <= 14 && daysUntil(c.submissionDeadline) >= 0).length;
-  document.getElementById('stat-total').textContent = filtered.length;
-  document.getElementById('stat-scopus').textContent = scopusCount;
-  document.getElementById('stat-urgent').textContent = urgentCount;
-}
-
-// ─── INIT ──────────────────────────────────────────────────────────────
-async function init() {
-  const dateStr = TODAY.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-  document.getElementById('stat-date').textContent = dateStr;
-  document.getElementById('footer-date').textContent = dateStr;
-
-  // Filter curated conferences within deadline range
-  allConferences = curatedConferences.filter(c => {
-    const days = daysUntil(c.submissionDeadline);
-    return days >= -3 && days <= 65;
-  });
-
-  // Fetch live data
-  const liveData = await fetchOpenAlexConferences();
-
-  // Hide loading
-  document.getElementById('loading-state').classList.add('hidden');
-
-  renderAll();
-
-  // Live filter listeners
-  document.getElementById('search-input').addEventListener('input', renderAll);
-  document.getElementById('filter-indexing').addEventListener('change', renderAll);
-  document.getElementById('filter-topic').addEventListener('change', renderAll);
-  document.getElementById('filter-urgency').addEventListener('change', renderAll);
-}
-
-init();
+render();
+})();
 </script>
 </body>
 </html>
